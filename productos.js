@@ -11,7 +11,7 @@ class ProductManager {
     const id = this.generateId();
     const existingProduct = this.products.find(product => product.code === code);
     if (existingProduct) {
-      throw new Error('El código del producto ya está en uso.');
+      throw new Error('Error, el código del producto ya está en uso.');
     }
 
     const newProduct = {
@@ -30,7 +30,7 @@ class ProductManager {
   getProductById(id) {
     const product = this.products.find(product => product.id === id);
     if (!product) {
-      throw new Error('Producto no encontrado.');
+      throw new Error('Lo sentimos , producto no encontrado');
     }
     return product;
   }
@@ -40,27 +40,27 @@ class ProductManager {
   }
 }
 
-// Crear una instancia de ProductManager
+// NEW ProductManager
 const productManager = new ProductManager();
 
-// Llamar a getProducts recién creada la instancia, debe devolver un arreglo vacío []
+// Llamar a getProducts arreglo vacío []
 console.log(productManager.getProducts()); // []
 
 // Agregar un nuevo producto
 const newProduct = productManager.addProduct("producto prueba", "Este es un producto prueba", 200, "Sin imagen", "abc123", 25);
 console.log(newProduct);
 
-// Verificar que el producto se haya agregado correctamente
+// validar que producto se haya agregado correctamente
 console.log(productManager.getProducts());
 
-// Intentar agregar un producto con el mismo código, debería arrojar un error
+// validar ingreso de mismo codigo 
 try {
   productManager.addProduct("producto prueba duplicado", "Este es otro producto prueba", 300, "Otra imagen", "abc123", 30);
 } catch (error) {
   console.error(error.message); // El código del producto ya está en uso.
 }
 
-// Probar getProductById
+//  getProductById
 try {
   const foundProduct = productManager.getProductById(newProduct.id);
   console.log(foundProduct);
@@ -68,9 +68,9 @@ try {
   console.error(error.message); // No debería imprimir nada, ya que el producto está en la lista
 }
 
-// Probar getProductById con un ID no existente
+//  getProductById con un ID no existente
 try {
   productManager.getProductById("nonexistent_id");
 } catch (error) {
-  console.error(error.message); // Producto no encontrado.
+  console.error(error.message); // Lo Siento , Producto no encontrado.
 }
