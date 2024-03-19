@@ -49,7 +49,7 @@ const productManager = new ProductManager();
 console.log(productManager.getProducts()); // []
 
 // Agregar un nuevo producto
-const newProduct = productManager.addProduct("producto prueba", "Este es un producto prueba", 200, "Sin imagen", "abc123", 25);
+const newProduct = productManager.addProduct("producto prueba", "Este es un producto prueba", 200, "img/Node.jpg", "abc123", 25);
 console.log(newProduct);
 
 // Verificar que el producto se haya agregado correctamente
