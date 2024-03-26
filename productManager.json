@@ -1,0 +1,11 @@
+[
+  {
+    "id": "_cjbwiizv2",
+    "title": "producto prueba",
+    "description": "Este es un producto prueba",
+    "price": 300,
+    "thumbnail": "img/Node.jpg",
+    "code": "abc123",
+    "stock": 30
+  }
+]

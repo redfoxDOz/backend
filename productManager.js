@@ -76,19 +76,19 @@ class ProductManager {
   }
 }
 
-const filePath = 'productManager.json';
-const productManager = new ProductManager(filePath);
+const filePath = 'ProductManager.json';
+const ProductManager = new ProductManager(filePath);
 
-console.log(productManager.getProducts());
+console.log(ProductManager.getProducts());
 
 // Agregar un nuevo producto
-const newProduct = productManager.addProduct("producto prueba", "Este es un producto prueba", 200, "img/Node.jpg", "abc123", 25);
+const newProduct = ProductManager.addProduct("producto prueba", "Este es un producto prueba", 200, "img/Node.jpg", "abc123", 25);
 console.log(newProduct);
 
 // Actualizar un producto existente
-const updatedProduct = productManager.updateProduct(newProduct.id, { price: 300, stock: 30 });
+const updatedProduct = ProductManager.updateProduct(newProduct.id, { price: 300, stock: 30 });
 console.log(updatedProduct);
 
 // Eliminar un producto
-productManager.deleteProduct(newProduct.id);
-console.log(productManager.getProducts());
+ProductManager.deleteProduct(newProduct.id);
+ console.log(ProductManager.getProducts());
