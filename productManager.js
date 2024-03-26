@@ -76,13 +76,12 @@ class ProductManager {
   }
 }
 
-// Ruta al archivo donde se almacenarán los productos
+// Ruta del JSON
 const filePath = 'productManager.json';
 
-// Crear una instancia de ProductManager
+//  instancia de ProductManager
 const productManager = new ProductManager(filePath);
 
-// Ejemplo de uso
 console.log(productManager.getProducts());
 
 // Agregar un nuevo producto
