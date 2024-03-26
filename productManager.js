@@ -1,4 +1,4 @@
-const fs = require('fs');
+import { readFileSync, writeFileSync } from 'fs';
 
 class ProductManager {
   constructor(filePath) {
@@ -8,7 +8,7 @@ class ProductManager {
 
   loadProducts() {
     try {
-      const data = fs.readFileSync(this.filePath, 'utf8');
+      const data = readFileSync(this.filePath, 'utf8');
       this.products = JSON.parse(data);
     } catch (error) {
       this.products = [];
@@ -16,7 +16,7 @@ class ProductManager {
   }
 
   saveProducts() {
-    fs.writeFileSync(this.filePath, JSON.stringify(this.products, null, 2));
+    writeFileSync(this.filePath, JSON.stringify(this.products, null, 2));
   }
 
   getProducts() {
