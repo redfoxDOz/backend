@@ -82,13 +82,16 @@ const productManager = new ProductManager(filePath);
 console.log(productManager.getProducts());
 
 // Agregar un nuevo producto
-const newProduct = productManager.addProduct("producto prueba", "Este es un producto prueba", 200, "img/Node.jpg", "abc123", 25);
-console.log(newProduct);
+console.log ("Ingresando producto");
+const newProduct = productManager.addProduct("Nuevo Producto", "Este es un producto de prueba", 200, "Sin Imagen ", "1", 25);
+console.log(newProduct,);
 
 // Actualizar un producto existente
-const updatedProduct = productManager.updateProduct(newProduct.id, { price: 300, stock: 30 });
-console.log(updatedProduct);
+console.log ("Producto actualizado el precio, codigo y stock  ");
+const updatedProduct = productManager.updateProduct(newProduct.id, { price: 500, code: "2", stock:11212122  });
+console.log(updatedProduct, );
 
 // Eliminar un producto
+console.log(" Producto eliminado de la BD");
 productManager.deleteProduct(newProduct.id);
-// console.log(productManager.getProducts());
+console.log(productManager.getProducts(),);
