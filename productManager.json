@@ -1,3 +1,11 @@
 [
-    
+  {
+    "id": "_i8yagwpym",
+    "title": "Producto actualizado",
+    "description": "Este es un producto de prueba actualizado",
+    "price": 500,
+    "thumbnail": "Sin Imagen",
+    "code": "2",
+    "stock": 10
+  }
 ]
