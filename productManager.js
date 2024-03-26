@@ -1,4 +1,4 @@
-const fs = require ('fs');
+const fs = require('fs');
 
 class ProductManager {
   constructor(filePath) {
@@ -16,7 +16,7 @@ class ProductManager {
   }
 
   saveProducts() {
-    fs.writeFileSync(this.filePath, JSON.stringify(this.products, null, 2));
+    fs.writeFileSync(this.filePath, JSON.stringify(this.products, null, 2), 'utf8');
   }
 
   getProducts() {
@@ -76,22 +76,24 @@ class ProductManager {
   }
 }
 
+// Ruta al archivo donde se almacenarán los productos
 const filePath = 'productManager.json';
+
+// Crear una instancia de ProductManager
 const productManager = new ProductManager(filePath);
 
+// Ejemplo de uso
 console.log(productManager.getProducts());
 
 // Agregar un nuevo producto
-console.log ("Ingresando producto");
-const newProduct = productManager.addProduct("Nuevo Producto", "Este es un producto de prueba", 200, "Sin Imagen ", "1", 25);
-console.log(newProduct,);
+const newProduct = productManager.addProduct("Nuevo Producto", "Este es un producto de prueba", 200, "Sin Imagen", "1", 25);
+console.log(newProduct);
 
 // Actualizar un producto existente
-console.log ("Producto actualizado el precio, codigo y stock  ");
-const updatedProduct = productManager.updateProduct(newProduct.id, { price: 500, code: "2", stock:11212122  });
-console.log(updatedProduct, );
+const updatedProduct = productManager.updateProduct(newProduct.id, { title: "Producto actualizado", description: "Este es un producto de prueba actualizado", price: 500, code: "2", stock: 10 });
+console.log(updatedProduct);
 
 // Eliminar un producto
-console.log(" Producto eliminado de la BD");
 productManager.deleteProduct(newProduct.id);
-console.log(productManager.getProducts(),);
+console.log(productManager.getProducts());
+
