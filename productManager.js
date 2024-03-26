@@ -94,5 +94,5 @@ console.log(updatedProduct);
 
 // Eliminar un producto
 productManager.deleteProduct(newProduct.id);
-console.log(productManager.getProducts());
+console.log(productManager.getProducts(), "Producto eliminado ");
 
