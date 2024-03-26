@@ -76,7 +76,7 @@ class ProductManager {
   }
 }
 
-const filePath = 'productos.json';
+const filePath = 'productManager.json';
 const productManager = new ProductManager(filePath);
 
 console.log(productManager.getProducts());
